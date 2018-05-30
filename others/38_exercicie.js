@@ -1,19 +1,52 @@
 'use strict' 
-/*  
-    1. Pida 6 numeros por pantalla y los meta en un array 
-    2. Mostrar el array entero (todos sus elementos) en el cuerpo de la pagina y en la consola 
-    3. Ordenarlo y mostrarlo 
-    4. Invertir su orden y mostrarlo 
-    5. Mostrar cuantos elementos tiene el array 
-    6. Busqueda de un valor introducido por el usuario, que nos diga si lo encuentra y su indice 
-(Se valorara el use de funciones) 
+
+/* 
+  1. Order 6 numbers per screen and place them in an array
+  2. Display the entire array (all its elements) in the body of the page and in the console
+  3. Sort and show it
+  4. Reverse your order and show it
+  5. Show how many elements the array has
+  6. Search of a value entered by the user, that tells us if it finds it and its index (the use of functions will be valued)
 */
-// Pedir 6 numeros 
-var numeros = []; 
-for(i = 0; i <= 5; i++ ){ 
-  numeros.push(parseInt(prompt("Introduce un numero", 0))); 
+
+// Show in the body of the page
+function showArray(elements, customText = ""){ 
+  document.write("<h1>Content of array "+customText+"</hl>"); 
+  document.write("<ul>"); 
+  elements.forEach((element, index) => { 
+    document.write("<li>"+element+"</li><br/>"); 
+  }); 
+  document.write("</ul>"); 
 } 
-// Mostrar en el cuerpo de la pagina 
-document.write(); 
-// Mostrar array en la consola 
-console.log(numeros); 
+
+// Order 6 numbers
+var numbers = []; 
+for(var i = 0; i <= 5; i++){ 
+  numbers.push(parseInt(prompt("Introduce a number", 0)));
+} 
+// Show in the console
+console.log(numbers); 
+
+// Show array in browser
+showArray(numbers);
+
+// Show array in browser - Sorted
+numbers.sort(function (a,b){return b-a});
+showArray(numbers, 'sorted');
+
+// Show array in browser - Reverse
+numbers.sort(function (a,b){return a-b});
+showArray(numbers, 'reverse');
+
+// How many elements have the array
+document.write("<h1>the array content: "+numbers.length+" elements</h1>"); 
+
+// Search 
+var search = parseInt(prompt("Search a number", 0)); 
+var position = numbers.findIndex( number => number == search); 
+if(position && position != -1){ 
+  document.write("<hr/><h1>FOUND</h1>"); 
+  document.write("<h1>Position of the searching: "+position+"</h1><hr/>"); 
+}else{ 
+  document.write("<hr/><h1>NOT FOUND</h1><hr/>"); 
+}
