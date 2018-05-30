@@ -1,0 +1,22 @@
+<!DOCTYPE html> <html lang="es"> 
+<head>   
+    <meta charset="UTF-8">   
+    <title>BOM</title>   
+</head>
+<body>
+    <div id="reloj"></div>
+<script >
+    var reloj = document.getElementById('reloj');
+    var getHour = function(){
+        var fecha = new Date();
+        var horas = fecha.getHours();
+        var minutos = fecha.getMinutes();
+        var segundos = fecha.getSeconds();
+        if(segundos < 10){
+            segundos = '0' + segundos;
+        }
+    reloj.textContent = horas + ':' + minutos + ':' + segundos;
+    };
+    setInterval(getHour,1000);
+</script> 
+</body> </html>

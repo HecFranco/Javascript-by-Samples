@@ -1,0 +1,13 @@
+#container {
+  width: 200px;
+  height: 200px;
+  background: yellow;
+  text-align: center;
+}
+
+.point {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+}

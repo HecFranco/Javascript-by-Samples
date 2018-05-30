@@ -1,0 +1,38 @@
+<!DOCTYPE html> <html lang="es"> 
+<head>   
+    <meta charset="UTF-8">   
+    <title>BOM</title>   
+</head>
+<body>
+    <div id="Bienvenida"></div>
+    <label for="time">
+        Escribe el tiempo en segundos
+    </label>
+    <input type="text" id="time">
+    <button id="timeButton">
+        Empezar la cuenta regresiva
+    </button>
+    <div id="countDown"></div>
+<script >
+    var time=document.getElementById('time'); //input
+    var timeButton=document.getElementById('timeButton');
+    var countDown=document.getElementById('countDown');
+    timeButton.addEventListener('click',function(){
+        var timeValue=time.value;
+        var contador=timeValue;
+        console.log(timeValue);
+        setTimeout(function(){
+            alert("se ha acabado tu tiempo");
+        },timeValue*1000);
+        var countDownValue=setInterval(function(){
+            if(contador>0){
+                contador--;			
+                countDown.textContent=contador;
+            } else { 
+                clearInterval(countDownValue);
+            }
+            console.log(contador);
+        },1000);
+    });
+</script> 
+</body> </html>
