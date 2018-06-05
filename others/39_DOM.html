@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+
+  <body>
+    <div class="myBox">Box with Class "myBox"</div>
+    <div id="myBox">Box with Id "myBox</div>
+    <script>
+      'use strict' 
+      // DOM - Document Object Model 
+      function changeColour(colour){ 
+        box1.style.background = colour; 
+      } 
+      // 
+      var box1 = document.getElementById("myBox"); 
+      var box2 = document.querySelector("#myBox"); 
+
+      box1.innerHTML = "TEXT IN THE BOX FROM JS!";
+      box1.style.background = "red"; 
+      box1.style.padding = "20px"; 
+      box1.style.color = "white"; 
+      box1.className = "hola hola2"; 
+
+      console.log(box1);
+    </script>
+  </body>
+
+</html> 

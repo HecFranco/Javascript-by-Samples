@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+
+  <body>
+    <div class="myBox">Box with Class "myBox"</div>
+    <div id="myBox">Box with Id "myBox</div>
+    <section id="mySection">
+      <h1>List of texts</h1>
+      <hr>
+    </section>
+    <script>
+      'use strict' 
+      // Conseguir elementos por su etiqueta 
+      var allDivs = document.getElementsByTagName('div'); 
+      var textContent = allDivs[1]; 
+      textContent.innerHTML = "Another text for the second element"; 
+      textContent.style.background = "red"; 
+      textContent.style.color = "white"; 
+      console.log(textContent); 
+
+      var hr = document.createElement("hr");
+      var section = document.querySelector("#mySection");
+      var value;
+      for(value in allDivs) {
+        console.log(allDivs[value]);
+        var textContent = allDivs[value].textContent;
+        if(typeof textContent == 'string'){
+          var paragraph = document.createElement("p");
+          var text = document.createTextNode(textContent);
+          paragraph.appendChild(text);
+          section.appendChild(paragraph);
+        }
+      }
+      section.append(hr);
+    </script>
+  </body>
+
+</html>
+
+
+
+ 
